@@ -1,0 +1,2 @@
+serviceClass: com.example.stockwatcher.client.GreetingService
+path: 5A31135A39D58F2165BB8E4248B2C2D3.gwt.rpc
