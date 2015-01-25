@@ -51,13 +51,83 @@ public class FarmWireframe implements EntryPoint {
 		homeFT.setWidget(0, 1, buttonP);
 		homeP.add(homeFT);
 		homeP.addStyleName("mainPanel");
+		//////////////////////////////////////////////////////////////////////////////////////////
+		//This is for the patient screen
+		VerticalPanel newPatientP = new VerticalPanel();
+		HorizontalPanel patientInfoP = new HorizontalPanel();
+		HorizontalPanel saveSendP = new HorizontalPanel();
+		FlexTable patientDataFT = new FlexTable();
+		FlexTable docDataFT = new FlexTable();
 		
+		Label newPatTitleL = new Label("Add New Patient");		
+		Label patNameL = new Label("Name:");
+		Label patDOBL = new Label("Date of Birth:");
+		Label patAddrL = new Label("Address:");
+		Label patPharmL = new Label("Pharmacy:");
+		Label docNotesL = new Label("Notes:");
+		Label docPrescripL = new Label("Prescription:");
+		Label docSigL = new Label("E-Signature:");
+		
+		TextBox patNameTB = new TextBox();
+		TextBox patDOBTB = new TextBox();
+		TextBox patAddrTB = new TextBox();
+		TextArea docNotesTA = new TextArea();
+		TextBox docPrescripTB = new TextBox();
+		TextBox docSigTB = new TextBox();
+		
+		ListBox patPharmLB = new ListBox();
+		
+		Button addPrescriptB = new Button("Add Prescription");
+		Button savePatientB = new Button("Save");
+		Button sendPrescripB = new Button("Send Prescription");
+		
+		newPatTitleL.addStyleName("loginText");
+		newPatientP.add(newPatTitleL);
+		
+		patientDataFT.setWidget(0, 0, patNameL);
+		patientDataFT.setWidget(0, 1, patNameTB);
+		patientDataFT.setWidget(1, 0, patDOBL);
+		patientDataFT.setWidget(1, 1, patDOBTB);
+		patientDataFT.setWidget(2, 0, patAddrL);
+		patientDataFT.setWidget(2, 1, patAddrTB);		
+		patientDataFT.setWidget(3, 0, patPharmL);
+		patientDataFT.setWidget(3, 1, patPharmLB);
+		
+		//patientInfoP.add(logoI);
+		patientInfoP.add(patientDataFT);
+		
+		newPatientP.add(patientInfoP);
+		
+		docDataFT.setWidget(0, 0, docNotesL);
+		docDataFT.setWidget(0, 1, docNotesTA);
+		docDataFT.setWidget(1, 0, docPrescripL);
+		docDataFT.setWidget(1, 1, docPrescripTB);
+		docDataFT.setWidget(1, 2, addPrescriptB);
+		docDataFT.setWidget(2, 0, docSigL);
+		docDataFT.setWidget(2, 1, docSigTB);
+		
+		
+		newPatientP.add(docDataFT);
+		
+		saveSendP.add(savePatientB);
+		saveSendP.add(sendPrescripB);
+		
+		
+		newPatientP.add(saveSendP);
+		
+		
+		
+		
+		
+		
+		newPatientP.addStyleName("mainPanel");
 		
 		
 		
 		
 		RootPanel.get("loginForm").add(loginMainP);
 		RootPanel.get("loginForm").add(homeP);
+		RootPanel.get("loginForm").add(newPatientP);
 		
 	}
 	
