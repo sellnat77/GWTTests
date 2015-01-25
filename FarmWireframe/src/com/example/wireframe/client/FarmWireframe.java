@@ -1,6 +1,7 @@
 package com.example.wireframe.client;
 
 import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.user.cellview.client.DataGrid;
 import com.google.gwt.user.client.ui.*;
 
 
@@ -93,7 +94,6 @@ public class FarmWireframe implements EntryPoint {
 		patientDataFT.setWidget(3, 0, patPharmL);
 		patientDataFT.setWidget(3, 1, patPharmLB);
 		
-		//patientInfoP.add(logoI);
 		patientInfoP.add(patientDataFT);
 		
 		newPatientP.add(patientInfoP);
@@ -106,29 +106,43 @@ public class FarmWireframe implements EntryPoint {
 		docDataFT.setWidget(2, 0, docSigL);
 		docDataFT.setWidget(2, 1, docSigTB);
 		
-		
 		newPatientP.add(docDataFT);
 		
 		saveSendP.add(savePatientB);
 		saveSendP.add(sendPrescripB);
 		
-		
 		newPatientP.add(saveSendP);
 		
-		
-		
-		
-		
-		
 		newPatientP.addStyleName("mainPanel");
+		////////////////////////////////////////////////////////////////////////////////////////////////////
+		//This is for the data grind implementation to display records from a database
+		VerticalPanel mainTableP = new VerticalPanel();
+		HorizontalPanel modDeleteP = new HorizontalPanel();
 		
+		Label mainTableL = new Label("Patient Records");
 		
+		Button modifyPatB = new Button("Modify");
+		Button deletePatB = new Button("Delete");
 		
+		DataGrid patientTableDG = new DataGrid();
+		
+		mainTableL.addStyleName("loginText");
+		mainTableP.add(mainTableL);
+		
+		mainTableP.add(patientTableDG);
+		
+		modDeleteP.add(deletePatB);
+		modDeleteP.add(modifyPatB);
+		
+		mainTableP.add(modDeleteP);
+		mainTableP.addStyleName("mainPanel");
+		
+
 		
 		RootPanel.get("loginForm").add(loginMainP);
 		RootPanel.get("loginForm").add(homeP);
 		RootPanel.get("loginForm").add(newPatientP);
-		
+		RootPanel.get("loginForm").add(mainTableP);
 	}
 	
 }
