@@ -115,7 +115,7 @@ public class FarmWireframe implements EntryPoint {
 		
 		newPatientP.addStyleName("mainPanel");
 		////////////////////////////////////////////////////////////////////////////////////////////////////
-		//This is for the data grind implementation to display records from a database
+		//This is for the data grid implementation to display records from a database
 		VerticalPanel mainTableP = new VerticalPanel();
 		HorizontalPanel modDeleteP = new HorizontalPanel();
 		
@@ -136,7 +136,7 @@ public class FarmWireframe implements EntryPoint {
 		
 		mainTableP.add(modDeleteP);
 		mainTableP.addStyleName("mainPanel");
-		
+		/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 		
 		RootPanel.get("loginForm").add(loginMainP);
