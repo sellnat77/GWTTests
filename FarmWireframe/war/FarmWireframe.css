@@ -1,0 +1,15 @@
+/** Add css rules here for your application. */
+.loginText
+{
+	margin-left: auto;
+	margin-right: auto;
+	
+	font-size: 200%;
+	
+}
+
+.mainPanel
+{
+	border-style: inset;
+	border-width: 5px;
+}
