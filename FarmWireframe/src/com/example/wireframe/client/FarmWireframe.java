@@ -1,6 +1,7 @@
 package com.example.wireframe.client;
 
 import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.user.cellview.client.DataGrid;
 import com.google.gwt.user.client.ui.*;
 
@@ -9,14 +10,18 @@ public class FarmWireframe implements EntryPoint {
 
 
 	public void onModuleLoad() {
+		/*
 		//This is for the login screen - very basic right now
 		TextBox usernameTB = new TextBox();
 		PasswordTextBox passwordTB = new PasswordTextBox();
-		Button loginSubmitB = new Button("Submit");
-		Label loginL = new Label("User Login");		
+		Button loginSubmitB = new Button("Login");
+		Label loginL = new Label("Please Log In");		
 		Label usernameL = new Label("Usersname");
 		Label passwordL = new Label("password");
 		VerticalPanel loginMainP = new VerticalPanel();
+		TabPanel tabP = new TabPanel();
+		
+		
 
 		FlexTable loginScreenFT = new FlexTable();
 		
@@ -27,29 +32,43 @@ public class FarmWireframe implements EntryPoint {
 		loginScreenFT.setWidget(2, 1, loginSubmitB);
 		
 		loginL.addStyleName("loginText");
+		usernameTB.addStyleName("textFields");
+		passwordTB.addStyleName("textFields");
+		usernameL.addStyleName("loginLabels");
+		passwordL.addStyleName("loginLabels");
+		loginSubmitB.addStyleName("loginButton");
 		
 		loginMainP.add(loginL);
 		loginMainP.add(loginScreenFT);
 		
 		loginMainP.addStyleName("mainPanel");
+		tabP.add(loginMainP,"Login");
+		*/
 		///////////////////////////////////////////////////////////////////////////////////////////
 		//This is for the home screen
-		HorizontalPanel homeP = new HorizontalPanel();
+		VerticalPanel homeP = new VerticalPanel();
+		HorizontalPanel welcomeP = new HorizontalPanel();
 		FlexTable homeFT = new FlexTable();
 		VerticalPanel buttonP = new VerticalPanel();
+		Label welcomeMessageL = new Label("Welcome to Web-Pharm!");
 		Button newPatientB = new Button("New Patient");
 		Button searchPatientsB = new Button("Search Patients");
 		Button settingsB = new Button("Settings");
+		Button lougoutB = new Button("Logout");
 		Image logoI = new Image("repository_logo.png");
 	
+		welcomeMessageL.addStyleName("loginText");
+		welcomeP.add(welcomeMessageL);
 		
 		buttonP.add(newPatientB);
 		buttonP.add(searchPatientsB);
 		buttonP.add(settingsB);
+		buttonP.add(lougoutB);
 		
 		
 		homeFT.setWidget(0, 0, logoI);
 		homeFT.setWidget(0, 1, buttonP);
+		homeP.add(welcomeP);
 		homeP.add(homeFT);
 		homeP.addStyleName("mainPanel");
 		//////////////////////////////////////////////////////////////////////////////////////////
@@ -85,6 +104,8 @@ public class FarmWireframe implements EntryPoint {
 		newPatTitleL.addStyleName("loginText");
 		newPatientP.add(newPatTitleL);
 		
+		patPharmLB.addItem("CVS Pharmacy");
+		
 		patientDataFT.setWidget(0, 0, patNameL);
 		patientDataFT.setWidget(0, 1, patNameTB);
 		patientDataFT.setWidget(1, 0, patDOBL);
@@ -102,9 +123,6 @@ public class FarmWireframe implements EntryPoint {
 		docDataFT.setWidget(0, 1, docNotesTA);
 		docDataFT.setWidget(1, 0, docPrescripL);
 		docDataFT.setWidget(1, 1, docPrescripTB);
-		docDataFT.setWidget(1, 2, addPrescriptB);
-		docDataFT.setWidget(2, 0, docSigL);
-		docDataFT.setWidget(2, 1, docSigTB);
 		
 		newPatientP.add(docDataFT);
 		
@@ -117,18 +135,25 @@ public class FarmWireframe implements EntryPoint {
 		////////////////////////////////////////////////////////////////////////////////////////////////////
 		//This is for the data grid implementation to display records from a database
 		VerticalPanel mainTableP = new VerticalPanel();
+		HorizontalPanel searchP = new HorizontalPanel();
 		HorizontalPanel modDeleteP = new HorizontalPanel();
 		
 		Label mainTableL = new Label("Patient Records");
+		TextBox searchPatientsTB = new TextBox();
+		Button searchB = new Button("Search!");
+		searchP.add(searchPatientsTB);
+		searchP.add(searchB);
 		
 		Button modifyPatB = new Button("Modify");
 		Button deletePatB = new Button("Delete");
 		
 		DataGrid patientTableDG = new DataGrid();
+		patientTableDG.setHeight("500px");
+		patientTableDG.setWidth("500px");
 		
 		mainTableL.addStyleName("loginText");
 		mainTableP.add(mainTableL);
-		
+		mainTableP.add(searchP);
 		mainTableP.add(patientTableDG);
 		
 		modDeleteP.add(deletePatB);
@@ -137,12 +162,18 @@ public class FarmWireframe implements EntryPoint {
 		mainTableP.add(modDeleteP);
 		mainTableP.addStyleName("mainPanel");
 		/////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+		TabPanel mainMenuTP = new TabPanel();
 		
-		RootPanel.get("loginForm").add(loginMainP);
-		RootPanel.get("loginForm").add(homeP);
-		RootPanel.get("loginForm").add(newPatientP);
-		RootPanel.get("loginForm").add(mainTableP);
+		mainMenuTP.add(homeP, "Home");
+		mainMenuTP.add(newPatientP, "New Patient");
+		mainMenuTP.add(mainTableP, "Search Patients");
+		mainMenuTP.add(new HTML("Logout"),"Logout");
+
+		Login loginScreen = new Login();
+		
+		RootPanel.get("loginForm").add(loginScreen.getPanel());
+		RootPanel.get("loginForm").add(mainMenuTP);
+		
 	}
 	
 }

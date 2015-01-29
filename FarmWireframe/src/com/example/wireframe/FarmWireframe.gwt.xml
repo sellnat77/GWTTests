@@ -4,7 +4,7 @@
 <module rename-to='farmwireframe'>
   <inherits name='com.google.gwt.user.User'/>
 
-  <inherits name='com.google.gwt.user.theme.dark.Dark'/>
+  <inherits name='com.google.gwt.user.theme.standard.Standard'/>
 
   <entry-point class='com.example.wireframe.client.FarmWireframe'/>
 
