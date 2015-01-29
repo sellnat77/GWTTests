@@ -10,7 +10,6 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class Login 
 {
-	//This is for the login screen - very basic right now
 		private TextBox tbUsername = new TextBox();
 		private PasswordTextBox tbPassword = new PasswordTextBox();
 		private Button bLoginSubmit = new Button("Login");
@@ -24,7 +23,9 @@ public class Login
 		/**
 		 * Provides the panel portion for the login screen
 		 * 
-		 * @return pLoginTab to be added to the root panel
+		 * @author Russell 
+		 * 
+		 * @return Returns a tab panel pLoginTab to be added to the root panel
 		 */
 		public TabPanel getPanel()
 		{
@@ -49,5 +50,4 @@ public class Login
 			
 			return pLoginTab;
 		}
-
 }
