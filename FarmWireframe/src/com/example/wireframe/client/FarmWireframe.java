@@ -9,6 +9,7 @@ public class FarmWireframe implements EntryPoint {
 
 	public void onModuleLoad() 
 	{
+		//Hello Testing!
 		TabPanel tpMainMenu = new TabPanel();
 		
 		Login loginScreen = new Login();
