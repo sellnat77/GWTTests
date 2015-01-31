@@ -1,3 +1,8 @@
+/**
+ * Class: Home
+ * Description: Holds the main vertical panel for the navigation elements
+ * @author Russell
+ */
 package com.example.wireframe.client;
 
 import com.google.gwt.user.client.ui.Button;

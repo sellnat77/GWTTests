@@ -1,3 +1,9 @@
+/**
+ * Class: PatientData
+ * Description: Holds the Datagrid to display patient records
+ * @author Russell
+ */
+
 package com.example.wireframe.client;
 
 import com.google.gwt.user.cellview.client.DataGrid;
@@ -31,7 +37,7 @@ public class PatientData
 		Button modifyPatB = new Button("Modify");
 		Button deletePatB = new Button("Delete");
 		
-		DataGrid patientTableDG = new DataGrid();
+		DataGrid<Integer> patientTableDG = new DataGrid<Integer>();
 		patientTableDG.setHeight("500px");
 		patientTableDG.setWidth("500px");
 		

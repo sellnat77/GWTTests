@@ -1,3 +1,9 @@
+/**
+ * Class: Patient
+ * Description: Contains the gui elements for the new patient screen
+ * @author Russell
+ */
+
 package com.example.wireframe.client;
 
 import com.google.gwt.user.client.ui.Button;

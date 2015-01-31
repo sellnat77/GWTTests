@@ -1,6 +1,11 @@
-package com.example.wireframe.client;
+/**
+ * Class: Login
+ * Description: Contains the gui elements for the login screen and logout screen
+ * 				Program decides which to display based on an overloaded method
+ * @author Russell
+ */
 
-import javax.swing.JOptionPane;
+package com.example.wireframe.client;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -9,7 +14,6 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PasswordTextBox;
-import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TabPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
