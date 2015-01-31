@@ -1,9 +1,15 @@
 package com.example.wireframe.client;
 
+import javax.swing.JOptionPane;
+
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.event.shared.UmbrellaException;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PasswordTextBox;
+import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TabPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -46,6 +52,22 @@ public class Login
 			
 			pLoginMain.addStyleName("mainPanel");
 			pLoginTab.add(pLoginMain,"Login");
+			
+			ClickHandler chLoginSubmit = new ClickHandler()
+			{
+				public void onClick(ClickEvent event)
+				{
+					try
+					{
+						
+					}
+					catch(UmbrellaException e)
+					{
+						e.printStackTrace();
+					}
+				}
+			};
+			bLoginSubmit.addClickHandler(chLoginSubmit);
 			
 			return pLoginTab;
 		}
