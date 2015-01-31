@@ -1,11 +1,13 @@
+/**
+ * Class: FarmWireframe
+ * Description: Main class of web-app, loads all gui elements onto the root panel
+ * Date: 1/31/2015
+ * @author Russell
+ */
+
 package com.example.wireframe.client;
 
 import com.google.gwt.core.client.EntryPoint;
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.core.client.GWT.UncaughtExceptionHandler;
-import com.google.gwt.core.client.Scheduler;
-import com.google.gwt.core.client.Scheduler.ScheduledCommand;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.*;
 
 
