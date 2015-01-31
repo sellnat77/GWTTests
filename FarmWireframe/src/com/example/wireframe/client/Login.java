@@ -24,7 +24,6 @@ public class Login
 		 * Provides the panel portion for the login screen
 		 * 
 		 * @author Russell 
-		 * 
 		 * @return Returns a tab panel pLoginTab to be added to the root panel
 		 */
 		public TabPanel getPanel()
@@ -49,5 +48,25 @@ public class Login
 			pLoginTab.add(pLoginMain,"Login");
 			
 			return pLoginTab;
+		}
+		
+		/**
+		 * Provides the logout panel to be added to the root panel
+		 * If this panel is needed, use the overloaded method to provide the proper panel
+		 * 
+		 * @author Russell
+		 * @param dummyVar
+		 * @return Returns the logout panel if calling method provides an integer
+		 */
+		public VerticalPanel getPanel(int dummyVar)
+		{
+			VerticalPanel pLogoutLayout = new VerticalPanel();
+			Label lLougoutMessage = new Label("You have successfully logged out!");
+			Button bOK = new Button("OK");
+			
+			pLogoutLayout.add(lLougoutMessage);
+			pLogoutLayout.add(bOK);
+			
+			return pLogoutLayout;
 		}
 }

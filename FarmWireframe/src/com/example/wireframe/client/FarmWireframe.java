@@ -19,7 +19,10 @@ public class FarmWireframe implements EntryPoint {
 		tpMainMenu.add(homeScreen.getPanel(), "Home");
 		tpMainMenu.add(patientScreen.getPanel(), "New Patient");
 		tpMainMenu.add(dataScreen.getPanel(), "Search Patients");
-		tpMainMenu.add(loginScreen.getPanel(),"Logout");	
+		tpMainMenu.add(loginScreen.getPanel(1),"Logout");
+		tpMainMenu.setWidth("100%");
+		
+		RootPanel.get().setWidth("100%");
 		
 		RootPanel.get("loginForm").add(loginScreen.getPanel());
 		RootPanel.get("loginForm").add(tpMainMenu);
